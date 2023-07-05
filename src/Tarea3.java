@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.util.Scanner;
 
 public class Tarea3 {
@@ -6,7 +5,7 @@ public class Tarea3 {
     public static void main(String[] args) {
         clear();
         menu();
-    } //inicio de todo
+    } //inicio
     public static void tablaFor(int num){
         for (int i = 1; i <= num; i++){
             System.out.println();
@@ -22,7 +21,7 @@ public class Tarea3 {
     public static void tablaDoWhile(int num){
         int i = 1;
         do {
-            System.out.println("");
+            System.out.println();
             int j = 1;
             do {
                 int res = i * j;
@@ -59,7 +58,8 @@ public class Tarea3 {
             for (int j = 1; j <= 12; j++){
                 int res = i * j;
 
-                if (res == 6){ //condicion que si es 6 no se imprima nada
+                if(res == 6){ //condicion que si es 6 no se imprima nada
+                    System.out.println();
 
                 } else {
                     System.out.println(i + "x" + j + "=" + res);
@@ -72,13 +72,13 @@ public class Tarea3 {
     public static void tablaDoWhileSinSeis(int num){
         int i = 1;
         do {
-            System.out.println("");
+            System.out.println();
             int j = 1;
             do {
                 int res = i * j;
 
                 if (res == 6){ //condicion que si es 6 no se imprima nada
-
+                    System.out.println();
                 } else {
                     System.out.println(i + "x" + j + "=" + res);
                 }
@@ -99,7 +99,7 @@ public class Tarea3 {
                 int res = i * j;
 
                 if (res == 6){ //condicion que si es 6 no se imprima nada
-
+                    System.out.println();
                 } else {
                     System.out.println(i + "x" + j + "=" + res);
                 }
@@ -199,129 +199,89 @@ public class Tarea3 {
         int opcion;
         Scanner teclado = new Scanner(System.in);
         opcion = teclado.nextInt();
-        switch (opcion){
-            case 0:
+        switch (opcion) {
+            case 0 -> {
                 System.out.println("***********************************************************");
                 System.out.println("                 SALIENDO DEL PROGRAMA");
                 System.out.println("***********************************************************");
-
-                break;
-            case 1:
-                tablaFor(12);
-                break;
-            case 2:
-                tablaDoWhile(12);
-                break;
-            case 3:
-                tablaWhile(12);
-                break;
-            case 4:
-                tablaForSinSeis(12);
-                break;
-            case 5:
-                tablaDoWhileSinSeis(12);
-                break;
-            case 6:
-                tablaWhileSinSeis(12);
-                break;
-            case 7:
+            }
+            case 1 -> tablaFor(12);
+            case 2 -> tablaDoWhile(12);
+            case 3 -> tablaWhile(12);
+            case 4 -> tablaForSinSeis(12);
+            case 5 -> tablaDoWhileSinSeis(12);
+            case 6 -> tablaWhileSinSeis(12);
+            case 7 -> {
                 Scanner tecla = new Scanner(System.in);
-
                 System.out.print("INGRESE EL PRIMER NUMERO: ");
                 int num1 = tecla.nextInt();
-
                 System.out.print("INGRESE EL SEGUNDO NUMERO: ");
                 int num2 = tecla.nextInt();
-
                 System.out.print("INGRESE EL TERCER NUMERO: ");
                 int num3 = tecla.nextInt();
-
                 int nMayor = numeroMayor(num1, num2, num3);
-
                 System.out.println("EL NUMERO MAYOR ES: " + nMayor);
-                break;
-            case 8:
+            }
+            case 8 -> {
                 Scanner tecla2 = new Scanner(System.in);
-
                 System.out.print("INGRESE EL PRIMER NUMERO: ");
                 int n1 = tecla2.nextInt();
-
                 System.out.print("INGRESE EL SEGUNDO NUMERO: ");
                 int n2 = tecla2.nextInt();
-
                 System.out.print("INGRESE EL TERCER NUMERO: ");
                 int n3 = tecla2.nextInt();
-
                 int nMenor = numeroMenor(n1, n2, n3);
-
                 System.out.println("EL NUMERO MENOR ES : " + nMenor);
-                break;
-            case 9:
+            }
+            case 9 -> {
                 Scanner tecladoArbolito = new Scanner(System.in);
                 System.out.print("\nINGRESA LA ALTURA DEL ARBOLITO INVERTIDO: ");
                 int altura = tecladoArbolito.nextInt();
-
                 arbolito(altura);
-                break;
-            case 10:
+            }
+            case 10 -> {
                 Scanner tecladoSumar = new Scanner(System.in);
-
                 System.out.print("INGRESE PRIMER NUMERO: ");
                 double nSuma1 = tecladoSumar.nextDouble();
-
                 System.out.print("INGRESE SEGUNDO NUMERO: ");
                 double nSuma2 = tecladoSumar.nextDouble();
-
                 double sumar = suma(nSuma1, nSuma2);
                 System.out.println("EL RESULTADO DE LA SUMA ES: " + sumar);
-
-                break;
-            case 11:
+            }
+            case 11 -> {
                 Scanner tecladoRestar = new Scanner(System.in);
-
                 System.out.print("INGRESE PRIMER NUMERO: ");
                 double nResta1 = tecladoRestar.nextDouble();
-
                 System.out.print("INGRESE SEGUNDO NUMERO: ");
                 double nResta2 = tecladoRestar.nextDouble();
-
                 double restar = resta(nResta1, nResta2);
                 System.out.println("EL RESULTADO DE LA RESTA ES: " + restar);
-
-                break;
-            case 12:
+            }
+            case 12 -> {
                 Scanner tecladoMultiplicar = new Scanner(System.in);
-
                 System.out.print("INGRESE PRIMER NUMERO: ");
                 double nMultiplicacion1 = tecladoMultiplicar.nextDouble();
-
                 System.out.print("INGRESE SEGUNDO NUMERO: ");
                 double nMultiplicacion2 = tecladoMultiplicar.nextDouble();
-
                 double multiplicar = multiplicacion(nMultiplicacion1, nMultiplicacion2);
                 System.out.println("EL RESULTADO DE LA MULTIPLICACION ES: " + multiplicar);
-
-                break;
-            case 13:
+            }
+            case 13 -> {
                 Scanner tecladoDividir = new Scanner(System.in);
-
                 System.out.print("INGRESE PRIMER NUMERO: ");
                 double nDividir1 = tecladoDividir.nextDouble();
-
                 System.out.print("INGRESE SEGUNDO NUMERO: ");
                 double nDividir2 = tecladoDividir.nextDouble();
-
                 double dividir = division(nDividir1, nDividir2);
                 System.out.println("EL RESULTADO DE LA DIVISION ES: " + dividir);
-
-                break;
-            default:
+            }
+            default -> {
                 Scanner tecladoDefault = new Scanner(System.in);
                 System.out.println("ERROR DE ENTRADA, POR FAVOR INGRESE UNA OPCION VALIDA.\nPRESIONE ENTER PARA CONTINUAR");
                 tecladoDefault.nextLine(); // Espera que el usuario presione cualquier tecla para continuar
                 clear(); // Simula limpiar la pantalla
                 menu(); // Bucle
-                break;
+            }
         }
 
     }
